@@ -8,6 +8,11 @@
 
     // TODO 2: Declare & assign a variable called fact
     // Its value should be an object with a statement, true/false answer, and explanation 
+    const facts = {
+        "statement": "1 + 1 === 2",
+        "answer": true,
+        "explanation":"Number are equal"
+    };
     
 
     
