@@ -10,7 +10,7 @@
     // Its value should be an object with a statement, true/false answer, and explanation 
     const fact = {
         "statement": "1 + 1 === 2",
-        "answer": true,
+        "answer": "true",
         "explanation":"Number are equal"
     };
     
@@ -47,6 +47,10 @@
 
             // TODO 7: Within the event handler function, 
             // Use a for loop to disable all the option buttons
+            disable(optionButtons[0]);
+            disable(optionButtons[1]);
+
+            isCorrect(eButton.value)?eButton.classList.add('correct'):eButton.classList.add('incorrect');
 
 
             // TODO 8: Within the event handler function,
