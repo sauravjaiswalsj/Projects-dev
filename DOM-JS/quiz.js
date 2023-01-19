@@ -31,7 +31,9 @@
 
     // TODO 5: Declare an isCorrect function that compares a guess to the right answer
     // isCorrect(guess) should return true if the guess matches the fact's answer
-    
+    const isCorrect = (guess)=>{
+        return fact.answer === guess;
+    }
 
 
     // TODO 6A: Use a for loop to add a click event listener to each of the optionButtons
