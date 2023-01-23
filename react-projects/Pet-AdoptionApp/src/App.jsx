@@ -1,5 +1,5 @@
 //Adding lib
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import { createRoot } from "react-dom/client";
 import SearchParams from "./SearchParams";
 import Details from './Details';
