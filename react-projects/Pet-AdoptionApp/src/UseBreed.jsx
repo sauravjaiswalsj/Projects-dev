@@ -14,6 +14,7 @@ export default function useBreedList(animal){
         }else{
             requestBreedList();
         }
+        //This is part of oneEffect so things render as a same state.
         async function requestBreedList(){
             setBreedList([]);
             setStatus("loading");
