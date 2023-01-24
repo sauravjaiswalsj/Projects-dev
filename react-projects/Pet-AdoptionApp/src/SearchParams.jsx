@@ -1,3 +1,90 @@
+import { useState } from "react";
+import { useQuery } from "@tanstack/react-query";
+import useBreedList from "./UseBreed";
+import Results from "./Results";
+import FetchSearch from "./FetchSearch";
+
+const Animal = ["bird", "cat", "dog"];
+const SearchParams = () => {
+    const [requestParams, setParams] = useState({
+        location: "",
+        animal: "",
+        breed: ""
+    })
+    const [animal, setAnimal] = useState("");
+    const [breeds] = useBreedList(animal);
+
+    const results = useQuery(["search", requestParams], FetchSearch);
+    const pets = results?.data?.pets ?? [];
+
+    return (
+        <div className="search-params">
+            <form
+                onSubmit={(e) => {
+                    e.preventDefault();
+                    const formData = new FormData(e.target);
+                    const obj = {
+                        animal: formData.get("animal") ?? "",
+                        breed: formData.get("breed") ?? "",
+                        location: formData.get("location") ?? "",
+                    };
+                    setParams(obj);
+                }}
+            >
+                <label htmlFor="location">
+                    Location
+                    <input
+                        name="location"
+                        id="location"
+                        placeholder="Location"
+                    />
+                </label>
+                <label htmlFor="animal">
+                    Animal
+                    <select
+                        name="animal"
+                        id="animal"
+                        onChange={(e) => {
+                            setAnimal(e.target.value);
+                        }}
+                    >
+                        <option />
+                        {Animal.map((animal) => (
+                            <option key={animal}>{animal}</option>
+                        ))}
+                    </select>
+                </label>
+                <label htmlFor="breed">
+                    Breed
+                    <select
+                        disabled={breeds.length === 0}
+                        name="breed"
+                        id="breed"
+                    >
+                        <option />
+                        {breeds.map((x) => (
+                            <option key={x}>{x}</option>
+                        ))}
+                    </select>
+                </label>
+
+                <button
+
+                >submit
+                </button>
+            </form>
+            <Results pets={pets} />
+        </div>
+    );
+};
+
+export default SearchParams;
+
+
+
+/*
+UseEffect way
+
 import { useState, useEffect } from "react";
 import useBreedList from "./UseBreed";
 import Results from "./Results";
@@ -80,3 +167,4 @@ const SearchParams = () => {
 };
 
 export default SearchParams;
+*/
