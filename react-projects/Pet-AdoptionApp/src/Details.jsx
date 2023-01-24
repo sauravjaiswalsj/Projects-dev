@@ -1,7 +1,33 @@
+import { useQueries } from "@tanstack/react-query";
 import { useParams } from "react-router-dom";
+import fetchPet from "./fetchPet";
+
 const Details = () => {
     const { id } = useParams();
-    return <h2>{id}</h2>;
+    //it is a way to fetch and cache data in react
+    //useQuery is a custom hook within React Query used to fetch data
+    const results = useQueries(["details",id],fetchPet);
+
+    if(results.isLoading){
+        return(
+            <div className="loading-pane">
+                <h2 className="loader">🌀</h2>
+            </div>
+        );
+    }
+
+    const pet = results.data.pet[0];
+
+    return (
+        <div className="details">
+            <div>
+                <h1>{pet.name}</h1>
+                <h2>{pet.animal} - {pet.breed} - {pet.city} - {pet.state}</h2>
+                <button>Adopt {pet.name}</button>
+                <p>{pet.description}</p>
+            </div>
+        </div>
+    );
 };
 
 export default Details;
