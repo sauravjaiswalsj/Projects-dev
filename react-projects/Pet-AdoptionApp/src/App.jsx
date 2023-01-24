@@ -16,6 +16,7 @@ const queryClient = new QueryClient({
 
 const App = () => {
    return (
+      <div>
       <BrowserRouter>
       <QueryClientProvider client={queryClient}>
          <header>
@@ -27,6 +28,7 @@ const App = () => {
          </Routes>
       </QueryClientProvider>
       </BrowserRouter>
+      </div>
    );
 };
 
