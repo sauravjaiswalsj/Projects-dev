@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { BrowserRouter } from 'react-router-dom'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import NavBar from './Components/Navbar';
+import Dashboard from './Components/Todo';
 
 //create infinite cache
 const queryClient = new QueryClient({
@@ -19,7 +20,8 @@ const App = () => {
     <>
       <BrowserRouter>
         <QueryClientProvider client={queryClient}>
-          <NavBar fixed="top" />
+          <NavBar />
+          <Dashboard />
         </QueryClientProvider>
       </BrowserRouter>
 
