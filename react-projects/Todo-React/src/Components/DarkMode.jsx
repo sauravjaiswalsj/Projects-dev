@@ -2,13 +2,6 @@ import { useState, useEffect } from 'react'
 
 export default function Example() {
     const [enabled, setEnabled] = useState(false)
-
-    useEffect(() => {
-        if (!enabled)
-            return null;
-        return (<></>)
-    }, [])
-
     return (
         <div className="relative flex flex-col items-center float-right min-h-screen overflow-hidden">
             <div className="flex">
