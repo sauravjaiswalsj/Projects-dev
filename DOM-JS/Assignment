@@ -1,0 +1,27 @@
+1) Develop a forum functionality using which a user can create a thread and all other users can reply on that. 
+
+2) Develop a team page on which admin can display details about the team members of two different teams in the organization. Create team display page + admin page from where admin can upload and edit the details of the team. 
+
+More details on this task: 
+(The assignment is to develop a page on which admin can display details of the members in a team. 
+So you will design 2 pages. 
+Page 1: Displays the details of the team members of team1 in a very structured fashion. And on clicking a button / tab, details of members of team 2 are displayed. 
+Page 2: Admin panel from where admin will be able to upload details of the team members. Add new member, delete a member, change the details, make them visible or hide them.) 
+
+3) Develop an online testing system in which evaluator can post questions (post audio-based questions, image-based questions and accept audio based response (sound recorder functionality), text based response, multiple choice options as response), etc. along with the timer functionality) 
+
+Note: Feel free to make assumptions when in doubt regarding assignment task. Just keep the assumptions inclined towards making your task usable and capable of generating value to the user of it in a real-world scenario. 
+
+Once done, kindly write to internships@olcademy.com with following details: 
+1) Share the code (you can zip and share) 
+2) Screenshots of the functioning code collected in a word file 
+3) Your working mobile number 
+
+Your task will be evaluated on the following parameters: 
+1) Aesthetics of the design 
+2) Robustness of the code 
+3) Time taken to develop (the earlier you submit, the better) 
+4) Complexity of the task chosen 
+5) Level of completion of task 
+
+Last date to submit the completed task: 31st October 2018 by 24:00 hrs (The earlier you submit the better) 
