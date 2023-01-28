@@ -5,7 +5,7 @@ import addTodo from "./addTodo";
 const AddTask = () => {
     const inputRef = useRef("");
 
-    const [task, setTask] = useState("");
+    const [task, setTask] = useState('');
     const result = useQuery(["addTask", task], addTodo);
     //const data = result?.data?.task ?? [];
 
@@ -15,7 +15,9 @@ const AddTask = () => {
                 onSubmit={(e) => {
                     e.preventDefault();
                     const todo = inputRef.current.value;
+                    console.log(todo)
                     setTask(todo);
+                    e.target.reset();
                 }}
             >
                 <div>
