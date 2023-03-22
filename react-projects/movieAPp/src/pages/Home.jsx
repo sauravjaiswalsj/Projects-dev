@@ -36,7 +36,7 @@ const Home = () => {
                                         {movie ? movie.release_date : ""}
                                         <span className="posterImage__rating">
                                             {movie ? movie.vote_average : ""}
-                                            <i className="fas fa-star" />{" "}
+                                            <i className="fas fa-star fa-2xs" />{" "}
                                         </span>
                                     </div>
                                     <div className="posterImage__description">{movie ? movie.overview : ""}</div>
