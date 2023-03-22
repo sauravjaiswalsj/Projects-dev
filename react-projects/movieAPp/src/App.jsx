@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css'
 import Header from './components/headers/Header'
+import Home from './pages/Home'
 
 function App() {
   return (
@@ -9,7 +10,7 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route index element={<h1>Hello World</h1>}></Route>
+          <Route index element={<Home />}></Route>
           <Route path="movie/:id" element={<h1>Movie Details</h1>}></Route>
           <Route path="movies/:type" element={<h1>Movie list page</h1>}></Route>
           <Route path="/*" element={<h1>Error page</h1>}></Route>
