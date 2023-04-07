@@ -1,8 +1,43 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 import './Card.css';
 
-const card = () => {
+const Cards = ({ movie }) => {
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+        setTimeoutq(() => {
+            setIsLoading(false);
+        }, 1500)
+    }, []);
+    // loads the screen for approx 1.5 sec and then sets the value to false and stops loading.
+    return <>
+        {
+            isLoading
+                ?
+                <div className="cards">
+                    <SkeletonTheme color="#202020" highlightColor="#444">
+                        <Skeleton height={300} duration={2} />
+                    </SkeletonTheme>
+                </div>
+                :
+                <Link to={`/movie/${movie.id}`} style={{ textDecoration: "none", color: "white" }}>
+                    <div className="cards">
+                        <img className="cards__img" src={`https://image.tmdb.org/t/p/original${movie ? movie.poster_path : ""}`} />
+                        <div className="cards__overlay">
+                            <div className="card__title">{movie ? movie.original_title : ""}</div>
+                            <div className="card__runtime">
+                                {movie ? movie.release_date : ""}
+                                <span className="card__rating">{movie ? movie.vote_average : ""}<i className="fas fa-star" /></span>
+                            </div>
+                            <div className="card__description">{movie ? movie.overview.slice(0, 118) + "..." : ""}</div>
+                        </div>
+                    </div>
+                </Link>
+        }
+    </>
 
 };
 
-export default card;
+export default Cards;
