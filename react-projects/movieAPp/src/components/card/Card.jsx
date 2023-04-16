@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from "react";
-import Skeleton from 'react-loading-skeleton'
-import 'react-loading-skeleton/dist/skeleton.css'
+import React, { useEffect, useState } from "react"
+import Skeleton, { SkeletonTheme } from "react-loading-skeleton"
 import './Card.css';
+import { Link } from "react-router-dom"
 
 const Cards = ({ movie }) => {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        setTimeoutq(() => {
+        setTimeout(() => {
             setIsLoading(false);
-        }, 1500)
+        }, 500)
     }, []);
     // loads the screen for approx 1.5 sec and then sets the value to false and stops loading.
     return <>
@@ -37,7 +37,6 @@ const Cards = ({ movie }) => {
                 </Link>
         }
     </>
-
 };
 
 export default Cards;

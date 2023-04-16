@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css'
 import Header from './components/headers/Header'
 import Home from './pages/Home'
+import MovieList from './components/MovieList/MovieList';
+import Movie from './pages/MovieDetail/movie';
 
 function App() {
   return (
@@ -11,8 +13,8 @@ function App() {
         <Header />
         <Routes>
           <Route index element={<Home />}></Route>
-          <Route path="movie/:id" element={<h1>Movie Details</h1>}></Route>
-          <Route path="movies/:type" element={<h1>Movie list page</h1>}></Route>
+          <Route path="movie/:id" element={<Movie />}></Route>
+          <Route path="movies/:type" element={<MovieList />}></Route>
           <Route path="/*" element={<h1>Error page</h1>}></Route>
         </Routes>
       </BrowserRouter>
