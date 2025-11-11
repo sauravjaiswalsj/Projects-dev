@@ -1,7 +1,9 @@
+import logo from '/vite.svg'
 export default function Header() {
     return (
         <div className="header">
-            <h1>Random Quote Generator</h1>
+            <img src={logo} alt="ThoughtMix" type="image/svg+xml" />
+            <h1>ThoughtMix</h1>
         </div>
     );
 }

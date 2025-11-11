@@ -37,6 +37,7 @@ function App() {
         <Nav />
         <SearchBox handleSubmit={handleSubmit} handleChange={handleChange} />
       </div>
+      <Card movies={movies} />
       <div class="container">
         <div class="columns is-multiline p-0 pt-6 last">
           <div class="column is-full">
